@@ -61,22 +61,6 @@ def get_pilaf(pilaf_id):
     return Responses.not_authorized()
 
 
-# @app.put("/update_user/<user_id>")
-# def update_user(user_id):
-#     auth_key = request.headers.get("XAuthKey")
-#     if auth_key and sessions_model.is_authorized(auth_key):
-#         if request.is_json:
-#             new_user_data = request.get_json()
-#             if UsersModel.is_user_data_valid(new_user_data):
-#                 user_changed = model.set_user_data(new_user_data, user_id)
-#                 if user_changed:
-#                     return UsersResponses.ok(message="Successfully changed")
-#                 return UsersResponses.user_not_found()
-#             return UsersResponses.invalid_json_format()
-#         return UsersResponses.invalid_request_body_data_type()
-#     return UsersResponses.not_authorized()
-
-
 @app.delete("/delete_pilaf/<pilaf_id>")
 def delete_pilaf(pilaf_id):
     auth_key = request.headers.get("XAuthKey")
